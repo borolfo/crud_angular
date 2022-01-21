@@ -1,0 +1,44 @@
+<h1 class="text-center my-2">Dettagli del cliente</h1>
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title text-center"> {{ details.ragioneSociale }} </h5>
+        <div class="container">
+            <div class="row">
+                <h6 class="card-subtitle mb-2 text-muted col-md-6">Partita IVA: {{ details.partitaIva }} </h6>
+                <h6 class="card-subtitle mb-2 text-muted col-md-6"> {{ details.tipoCliente }} </h6>
+                <p class="card-text col-md-4">Email: {{ details.email }} </p>
+                <p class="card-text col-md-4">PEC: {{ details.pec }} </p>
+                <p class="card-text col-md-4">Telefono: {{ details.telefono }} </p>
+                <p class="card-text col-md-6">Nome: {{ details.nomeContatto }} </p>
+                <p class="card-text col-md-6">Cognome: {{ details.cognomeContatto }} </p>
+                <p class="card-text col-md-6">Telefono: {{ details.telefonoContatto }} <a href="#" class="card-link"><i class="bi bi-telephone"></i></a></p>
+                <p class="card-text col-md-6">Email: {{ details.emailContatto }} <a href="#" class="card-link"><i class="bi bi-envelope"></i></a></p>
+                <div class="row col-md-12">
+                    <div class="card col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">Indirizzo sede operativa:</h5>
+                          <p class="card-text"> {{details.indirizzoSedeOperativa.via}}, n° {{ details.indirizzoSedeOperativa.civico }} </p>
+                          <p class="card-text"> {{details.indirizzoSedeOperativa.cap}}, {{ details.indirizzoSedeOperativa.localita }} </p>
+                          <p class="card-text"> {{details.indirizzoSedeOperativa.comune.nome}}, {{ details.indirizzoSedeOperativa.comune.provincia.nome }}, ({{ details.indirizzoSedeOperativa.comune.provincia.sigla }}) </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Indirizzo sede legale:</h5>
+                            <p class="card-text"> {{details.indirizzoSedeLegale.via}}, n° {{ details.indirizzoSedeLegale.civico }} </p>
+                            <p class="card-text"> {{details.indirizzoSedeLegale.cap}}, {{ details.indirizzoSedeLegale.localita }} </p>
+                            <p class="card-text"> {{details.indirizzoSedeLegale.comune.nome}}, {{ details.indirizzoSedeLegale.comune.provincia.nome }}, ({{ details.indirizzoSedeLegale.comune.provincia.sigla }}) </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="col-md-4"> Data inserimento: {{ details.dataInserimento }} </p>
+                <p class="col-md-4"> Data ultimo contatto: {{ details.dataUltimoContatto }} </p>
+                <p class="col-md-4"> Fatturato annuale: {{ details.fatturatoAnnuale }} </p>
+            </div>
+        </div>
+        <div class="col-md-12 text-center my-2">
+            <button class="btn   col-md-1 mx-2" [routerLink]="['/users']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></button>
+            <button class="btn   col-md-1 mx-2" (click)="openEdit(details)"><i class="bi bi-pencil-square"></i></button>
+        </div>
+    </div>
+  </div>

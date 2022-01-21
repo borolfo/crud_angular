@@ -1,0 +1,47 @@
+<h1 class="text-center my-2">Dettagli fattura</h1>
+<div class="card">
+    <div class="card-body">
+        <h4 class="card-title text-center"> Fattura n° {{detailFatture.numero}} </h4>
+        <div class="container">
+            <div class="row">
+                <h5 class="card-subtitle mb-2 text-muted col-md-3">Data: {{detailFatture.data}} </h5>
+                <h5 class="card-subtitle mb-2 text-muted col-md-3">Anno: {{detailFatture.anno}} </h5>
+                <h5 class="card-subtitle mb-2 text-muted col-md-3">Importo: {{detailFatture.importo}} </h5>
+                <h5 class="card-subtitle mb-2 text-muted col-md-3">Stato: {{detailFatture.stato.nome}} </h5>
+                <h5 class="card-subtitle my-2 text-center col-md-12">Dati cliente</h5>
+                <p class="card-text col-md-4">Ragione Sociale: {{detailFatture.cliente.ragioneSociale}} </p>
+                <p class="card-text col-md-4">Partita IVA: {{detailFatture.cliente.partitaIva}} </p>
+                <p class="card-text col-md-4">Tipo cliente: {{detailFatture.cliente.tipoCliente}} </p>
+                <p class="card-text col-md-6">Nome: {{detailFatture.cliente.nomeContatto}} </p>
+                <p class="card-text col-md-6">Cognome: {{detailFatture.cliente.cognomeContatto}} </p>
+                <p class="card-text col-md-6">Telefono: {{detailFatture.cliente.telefonoContatto}} </p>
+                <p class="card-text col-md-6">Email: {{detailFatture.cliente.emailContatto}} </p>
+                <div class="row col-md-12">
+                    <div class="card col-md-6">
+                        <div class="card-body">
+                          <h5 class="card-title">Indirizzo sede operativa:</h5>
+                          <p class="card-text"> {{detailFatture.cliente.indirizzoSedeOperativa.via}}, n° {{ detailFatture.cliente.indirizzoSedeOperativa.civico }} </p>
+                          <p class="card-text"> {{detailFatture.cliente.indirizzoSedeOperativa.cap}}, {{ detailFatture.cliente.indirizzoSedeOperativa.localita }} </p>
+                          <p class="card-text"> {{detailFatture.cliente.indirizzoSedeOperativa.comune.nome}}, {{ detailFatture.cliente.indirizzoSedeOperativa.comune.provincia.nome }}, ({{ detailFatture.cliente.indirizzoSedeOperativa.comune.provincia.sigla }}) </p>
+                        </div>
+                    </div>
+                    <div class="card col-md-6">
+                        <div class="card-body">
+                            <h5 class="card-title">Indirizzo sede legale:</h5>
+                            <p class="card-text"> {{detailFatture.cliente.indirizzoSedeLegale.via}}, n° {{ detailFatture.cliente.indirizzoSedeLegale.civico }} </p>
+                            <p class="card-text"> {{detailFatture.cliente.indirizzoSedeLegale.cap}}, {{ detailFatture.cliente.indirizzoSedeLegale.localita }} </p>
+                            <p class="card-text"> {{detailFatture.cliente.indirizzoSedeLegale.comune.nome}}, {{ detailFatture.cliente.indirizzoSedeLegale.comune.provincia.nome }}, ({{ detailFatture.cliente.indirizzoSedeLegale.comune.provincia.sigla }}) </p>
+                        </div>
+                    </div>
+                </div>
+                <p class="col-md-4"> Data inserimento: {{ detailFatture.cliente.dataInserimento }} </p>
+                <p class="col-md-4"> Data ultimo contatto: {{ detailFatture.cliente.dataUltimoContatto }} </p>
+                <p class="col-md-4"> Fatturato annuale: {{ detailFatture.cliente.fatturatoAnnuale }} </p>
+            </div>
+        </div>
+        <div class="col-md-12 text-center my-2">
+            <button class="btn   col-md-1 mx-2" [routerLink]="['/fatture/page/:page']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></button>
+            <button class="btn   col-md-1 mx-2" (click)="openEditDetails(detailFatture)"><i class="bi bi-pencil-square"></i></button>
+        </div>
+    </div>
+</div>

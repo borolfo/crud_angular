@@ -1,0 +1,33 @@
+<h1 class="text-center my-2">Aggiungi una fattura</h1>
+<div class="container">
+    <form class="row g-3">
+        <div class="col-md-5 my-2">
+            <input type="number" class="form-control" [(ngModel)]="newFattura.numero" name="numero" placeholder="Numero">
+        </div>
+        <div class="col-md-5 my-2">
+            <input type="number" class="form-control" [(ngModel)]="newFattura.anno" name="anno" placeholder="Anno">
+        </div>
+        <div class="col-md-2 my-2">
+            <select class="form-select form-control" [(ngModel)]="newFattura.stato" name="stato">
+                <option selected disabled>Stato fattura</option>
+                <option *ngFor="let item of stato" [ngValue]="item"> {{ item.nome | json }} </option>
+            </select>
+        </div>
+        <div class="col-md-4 my-2">
+            <select class="form-select form-control" [(ngModel)]="newFattura.cliente" name="ragioneSociale">
+                <option selected disabled>Seleziona cliente</option>
+                <option *ngFor="let item of customer" [ngValue]="item"> {{item.ragioneSociale | json}} </option>
+            </select>  
+        </div>
+        <div class="col-md-4 my-2">
+            <input type="number" class="form-control" [(ngModel)]="newFattura.data" name="data" placeholder="Data">
+        </div>
+        <div class="col-md-4 my-2">
+            <input type="number" class="form-control" [(ngModel)]="newFattura.importo" name="importo" placeholder="Importo">
+        </div>
+        <div class="col-12 text-center my-2">
+            <button class="btn   col-md-1 mx-2" [routerLink]="['/fatture']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></button>
+            <button type="button" class="btn  " (click)="addFattura(newFattura)">Aggiungi fattura</button>
+        </div>
+    </form> 
+</div>

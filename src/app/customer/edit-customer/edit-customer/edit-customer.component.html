@@ -1,0 +1,72 @@
+<h1 class="text-center mt-3 mb-3">Modifica il cliente</h1>
+<div class="container">
+    <form class="row g-3">
+      <div class="col-md-5 my-2">
+        <input type="text" class="form-control" [(ngModel)]="editCustomer.ragioneSociale" name="ragioneSociale" placeholder="Ragione Sociale">
+      </div>
+      <div class="col-md-5 my-2">
+        <input type="number" class="form-control" [(ngModel)]="editCustomer.partitaIva" name="partitaIva" placeholder="Partita Iva">
+      </div>
+      <div class="col-md-2 my-2">
+        <select class="form-select form-control" [(ngModel)]="editCustomer.tipoCliente" name="tipoCliente">
+          <option selected disabled>Tipo di cliente</option>
+          <option>SPA</option>
+          <option>SRL</option>
+          <option>SAS</option>
+          <option>PA</option>
+        </select>
+      </div>
+      <div class="col-md-4 my-2">
+        <input type="email" class="form-control" placeholder="Inserisci Email"[(ngModel)]="editCustomer.email" name="email">
+      </div>
+      <div class="col-md-4 my-2">
+        <input type="email" class="form-control" [(ngModel)]="editCustomer.pec" name="pec" placeholder="PEC">
+      </div>
+      <div class="col-md-4 my-2">
+        <input type="number" class="form-control" [(ngModel)]="editCustomer.telefono" name="telefono" placeholder="Telefono">
+      </div>
+      <div class="col-md-6 my-2">
+        <input type="text" class="form-control" [(ngModel)]="editCustomer.nomeContatto" name="nomeContatto" placeholder="Nome contatto">
+      </div>
+      <div class="col-md-6 my-2">
+        <input type="text" class="form-control" [(ngModel)]="editCustomer.cognomeContatto" name="cognomeContatto" placeholder="Cognome Contatto">
+      </div>
+      <div class="col-md-6 my-2">
+        <input type="number" class="form-control" [(ngModel)]="editCustomer.telefonoContatto" name="telefonoContatto" placeholder="Telefono Contatto">
+      </div>
+      <div class="col-md-6 my-2">
+        <input type="email" class="form-control" [(ngModel)]="editCustomer.emailContatto" name="emailContatto" placeholder="Email Contatto">
+      </div>
+      <div class="col-md-6 my-2">
+        <button class="btn  ">Indirizzo sede operativa</button>
+          <div class="input-group">
+            <input type="text" class="form-control my-2 col-md-10" [(ngModel)]="editCustomer.indirizzoSedeOperativa.via" name="viaOpe" placeholder="Via">
+            <input type="number" class="form-control my-2 col-md-2" [(ngModel)]="editCustomer.indirizzoSedeOperativa.civico" name="civicoOpe" placeholder="Civico">
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control my-2 col-md-3" [(ngModel)]="editCustomer.indirizzoSedeOperativa.cap" name="capOpe" placeholder="CAP">
+            <input type="text" class="form-control my-2 col-md-9" [(ngModel)]="editCustomer.indirizzoSedeOperativa.localita" name="localitaOpe" placeholder="Località">
+          </div>
+      </div>
+      <div class="col-md-6 my-2">
+        <button class="btn  ">Indirizzo sede legale</button>
+          <div class="input-group">
+            <input type="text" class="form-control my-2 col-md-10" [(ngModel)]="editCustomer.indirizzoSedeLegale.via" name="viaLeg" placeholder="Via">
+            <input type="number" class="form-control my-2 col-md-2" [(ngModel)]="editCustomer.indirizzoSedeLegale.civico" name="civicoLeg" placeholder="Civico">
+          </div>
+          <div class="input-group">
+            <input type="text" class="form-control my-2 col-md-3" [(ngModel)]="editCustomer.indirizzoSedeLegale.cap" name="capLeg" placeholder="CAP">
+            <input type="text" class="form-control my-2 col-md-9" [(ngModel)]="editCustomer.indirizzoSedeLegale.localita" name="localitaLeg" placeholder="Località">
+        </div>
+      </div>
+      <div class="input-group">
+        <input type="text" class="form-control my-2 col-md-4" [(ngModel)]="editCustomer.dataInserimento" name="dataIns" placeholder="Data inserimento">
+        <input type="text" class="form-control my-2 col-md-4" [(ngModel)]="editCustomer.dataUltimoContatto" name="dataCont" placeholder="Data ultimo contatto">
+        <input type="text" class="form-control my-2 col-md-4" [(ngModel)]="editCustomer.fatturatoAnnuale" name="Fatt" placeholder="Fatturato">
+      </div>
+      <div class="col-12 text-center my-2">
+        <button class="btn   col-md-1 mx-2" (click)="backToCustomerDetail()" ><i class="bi bi-arrow-left-square-fill"></i></button>
+        <button type="button" class="btn  " (click)="saveEditCustomer(editCustomer)">Salva modifiche</button>
+      </div> 
+    </form>
+</div>

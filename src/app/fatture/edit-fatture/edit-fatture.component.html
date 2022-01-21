@@ -1,0 +1,31 @@
+<h1 class="text-center my-2">Modifica fattura</h1>
+<div class="container">
+    <h1 class="text-center my-3">Modifica la fattura</h1>
+    <form class="row g-3">
+        <div class="col-md-5 my-2">
+            <input type="number" class="form-control" [(ngModel)]="editFatture.numero" name="numero" placeholder="Numero">
+        </div>
+        <div class="col-md-5 my-2">
+            <input type="number" class="form-control" [(ngModel)]="editFatture.anno" name="anno" placeholder="Anno">
+        </div>
+        <div class="col-md-2 my-2">
+            <select class="form-select form-control" [(ngModel)]="editFatture.stato" name="stato">
+                <option selected disabled>Stato fattura</option>
+                <option *ngFor="let item of stato" [ngValue]="item"> {{ item.nome | json }} </option>
+            </select>
+        </div>
+        <div class="col-md-4 my-2">
+            <input type="text" class="form-control" [(ngModel)]="editFatture.cliente.ragioneSociale" name="ragioneSociale" disabled>
+        </div>
+        <div class="col-md-4 my-2">
+            <input type="text" class="form-control" [(ngModel)]="editFatture.data" name="data" placeholder="Data">
+        </div>
+        <div class="col-md-4 my-2">
+            <input type="number" class="form-control" [(ngModel)]="editFatture.importo" name="importo" placeholder="Importo">
+        </div>
+        <div class="col-12 text-center my-2">
+            <button class="btn   mx-2" (click)="backToDetailFattura()"><i class="bi bi-arrow-left-square-fill"></i></button>
+            <button type="button" class="btn  " (click)="saveEditFattura(editFatture)">Salva modifiche alla fattura</button>
+        </div>
+    </form> 
+</div>

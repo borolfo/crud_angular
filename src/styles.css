@@ -1,0 +1,146 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Dark mode */
+body:not(.dark-mode-preloading) {
+  transition: all 0.3s linear;
+}
+
+body.dark-mode .navbar-toggler {
+  background-color: #fffffa;
+}
+
+body.dark-mode .cardHome {
+  background-color: #702632;
+}
+
+body.dark-mode nav {
+  background-color: #702632;
+}
+
+body.dark-mode .pagination {
+  background-color: #000000;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #fffffa;
+}
+
+body.dark-mode .card {
+  background-color: #702632;
+}
+
+body.dark-mode .bi {
+  color: #fffffa;
+}
+
+body.dark-mode h1 {
+  color: #fffffa;
+}
+
+body.dark-mode nav {
+  background-color: #702632 !important
+}
+
+body.dark-mode nav div ul li a {
+  color: #fffffa !important
+}
+
+body.dark-mode nav i {
+  color: #fffffa !important
+}
+
+body.dark-mode .pagination{
+  background-color: #000000 !important
+}
+
+body.dark-mode .pagination a {
+  color: #fffffa !important
+}
+
+body.dark-mode .pagination li a {
+  background-color: #702632;
+}
+
+body.dark-mode table {
+  border: #fffffa solid 2px;
+  background-color: #702632;
+  color: #fffffa;
+}
+
+body.dark-mode button {
+  background-color: #702632;
+  color: #fffffa;
+}
+
+body.dark-mode .input-group-text {
+  background-color: #702632;
+  color: #fffffa;
+}
+
+body.dark-mode form h1 {
+  color: #000000;
+}
+
+body.dark-mode footer {
+  background-color: #702632;
+}
+
+/* Light mode */
+body.light-mode {
+  background-color: #fffffa;
+  color: #2d3436;
+}
+
+body.light-mode .cardHome {
+  border: #912f40 solid 2px;
+  background-color: #fffffa;
+}
+
+body.light-mode nav {
+  background-color: #912f40 !important
+}
+
+body.light-mode nav div ul li a {
+  color: #fffffa !important
+}
+
+body.light-mode nav i {
+  color: #fffffa !important
+}
+
+body.light-mode .bi {
+  color: #000000;
+}
+
+body.light-mode .bi {
+  color: #fffffa;
+}
+
+body.light-mode .pagination{
+  background-color: #fffffa !important
+}
+
+body.light-mode .pagination a {
+  color: #912f40 !important
+}
+
+body.light-mode table {
+  border: #912f40 solid 2px;
+  background-color: #fffffa;
+  color: #912f40;
+}
+
+body.light-mode button {
+  background-color: #912f40;
+  color: #fffffa;
+}
+
+body.light-mode .input-group-text {
+  background-color: #912f40;
+  color: #fffffa;
+}
+
+body.light-mode footer {
+  background-color: #912f40;
+}

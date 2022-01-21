@@ -1,0 +1,22 @@
+button {
+    font-size: 250%;
+    margin: 0% 44%;
+}
+
+@media only screen and (min-width:768px) {
+    button {
+        margin: 0% 40%;
+    }
+}
+
+@media only screen and (min-width:992px) and (max-width:1199px) {
+    button {
+        margin: 0% 43%;
+    }
+}
+
+@media only screen and (min-width:1200px) {
+    button {
+        margin: 0% 44%;
+    }
+}

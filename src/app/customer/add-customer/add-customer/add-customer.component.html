@@ -1,0 +1,98 @@
+<h1 class="text-center mt-3 mb-3">Aggiungi un nuovo cliente</h1>
+<div class="container">
+  <form class="row g-3">
+    <div class="col-md-5 my-2">
+      <input type="text" class="form-control" [(ngModel)]="newCustomer.ragioneSociale" name="ragioneSociale" placeholder="Ragione Sociale">
+    </div>
+    <div class="col-md-5 my-2">
+      <input type="text" class="form-control" [(ngModel)]="newCustomer.partitaIva" name="partitaIva" placeholder="Partita Iva">
+    </div>
+    <div class="col-md-2 my-2">
+      <select class="form-select form-control" [(ngModel)]="newCustomer.tipoCliente" name="tipoCliente">
+        <option selected disabled>Tipo di cliente</option>
+        <option>SRL</option>
+        <option>SPA</option>
+        <option>SAS</option>
+        <option>PA</option>
+      </select>
+    </div>
+    <div class="col-md-4 my-2">
+      <input type="email" class="form-control" placeholder="Inserisci Email"[(ngModel)]="newCustomer.email" name="email">
+    </div>
+    <div class="col-md-4 my-2">
+      <input type="email" class="form-control" [(ngModel)]="newCustomer.pec" name="pec" placeholder="PEC">
+    </div>
+    <div class="col-md-4 my-2">
+      <input type="text" class="form-control" [(ngModel)]="newCustomer.telefono" name="telefono" placeholder="Telefono">
+    </div>
+    <div class="col-md-6 my-2">
+      <input type="text" class="form-control" [(ngModel)]="newCustomer.nomeContatto" name="nomeContatto" placeholder="Nome contatto">
+    </div>
+    <div class="col-md-6 my-2">
+      <input type="text" class="form-control" [(ngModel)]="newCustomer.cognomeContatto" name="cognomeContatto" placeholder="Cognome Contatto">
+    </div>
+    <div class="col-md-6 my-2">
+      <input type="text" class="form-control" [(ngModel)]="newCustomer.telefonoContatto" name="telefonoContatto" placeholder="Telefono Contatto">
+    </div>
+    <div class="col-md-6 my-2">
+      <input type="email" class="form-control" [(ngModel)]="newCustomer.emailContatto" name="emailContatto" placeholder="Email Contatto">
+    </div>
+    <div class="col-md-6 my-2">
+      <button class="btn  " (click)="showSedeOperativa()">Indirizzo sede operativa</button>
+      <div *ngIf="showOperativa">
+        <div class="input-group">
+          <input type="text" class="form-control my-2 col-md-10" [(ngModel)]="newCustomer.indirizzoSedeOperativa.via" name="via" placeholder="Via">
+          <input type="text" class="form-control my-2 col-md-2" [(ngModel)]="newCustomer.indirizzoSedeOperativa.civico" name="civico" placeholder="Civico">
+        </div>
+        <div class="input-group">
+          <input type="text" class="form-control my-2 col-md-3" [(ngModel)]="newCustomer.indirizzoSedeOperativa.cap" name="cap" placeholder="CAP">
+          <input type="text" class="form-control my-2 col-md-9" [(ngModel)]="newCustomer.indirizzoSedeOperativa.localita" name="localita" placeholder="Località">
+        </div>
+        <div class="input-group">
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label>Comune</label>
+              <select class="form-select form-control" [(ngModel)]="newCustomer.indirizzoSedeOperativa.comune" name="comune"> <!-- ho provato sia con name="comune" che con name="item" -->
+                <option selected>Seleziona Comune</option>
+                <option *ngFor="let item of comuni" [ngValue]="item">{{item.nome}}</option>
+              </select>            
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-6 my-2">
+      <button class="btn  " (click)="showSedeLegale()">Indirizzo sede legale</button>
+      <div *ngIf="showLegale">
+        <div class="input-group">
+          <input type="text" class="form-control my-2 col-md-10" [(ngModel)]="newCustomer.indirizzoSedeLegale.via" name="via" placeholder="Via">
+          <input type="text" class="form-control my-2 col-md-2" [(ngModel)]="newCustomer.indirizzoSedeLegale.civico" name="civico" placeholder="Civico">
+        </div>
+        <div class="input-group">
+          <input type="text" class="form-control my-2 col-md-3" [(ngModel)]="newCustomer.indirizzoSedeLegale.cap" name="cap" placeholder="CAP">
+          <input type="text" class="form-control my-2 col-md-9" [(ngModel)]="newCustomer.indirizzoSedeLegale.localita" name="localita" placeholder="Località">
+        </div>
+        <div class="input-group">
+          <div class="form-row">
+            <div class="form-group col-md-8">
+              <label>Comune</label>
+              <select class="form-select form-control" [(ngModel)]="newCustomer.indirizzoSedeLegale.comune" name="comune">
+                <option selected>Seleziona Comune</option>
+                <option *ngFor="let item of comuni" [ngValue]="item">{{item.nome}}</option>
+              </select>             
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="input-group col-md-12">
+      <input type="text" class="form-control my-2 col-md-4" [(ngModel)]="newCustomer.dataInserimento" name="dataInserimento" placeholder="Data inserimento">
+      <input type="text" class="form-control my-2 col-md-4" [(ngModel)]="newCustomer.dataUltimoContatto" name="dataContato" placeholder="Data ultimo contatto">
+      <input type="text" class="form-control my-2 col-md-4" [(ngModel)]="newCustomer.fatturatoAnnuale" name="fatturatoAnnuale" placeholder="Fatturato">
+    </div>
+    <div class="col-md-12 text-center my-2">
+      <button class="btn   col-md-1 mx-2" [routerLink]="['/users']" routerLinkActive="router-link-active" ><i class="bi bi-arrow-left-square-fill"></i></button>
+      <button type="button" class="btn  " (click)="addCustomer(newCustomer)">Aggiungi cliente</button>
+    </div>
+  </form>
+</div>
